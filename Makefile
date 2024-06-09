@@ -5,7 +5,7 @@ BUILD_PATH := bin
 
 .PHONY: all install check fix clean build run
 
-all: clean install build
+all: clean build
 
 install:
 	go mod download
@@ -28,7 +28,7 @@ run: build
 
 help:
 	@echo "Available targets:"
-	@echo "  all: Clean, install and builds the program"
+	@echo "  all: Clean and builds the program"
 	@echo "  install: install packages"
 	@echo "  check: Report issues in the code"
 	@echo "  fix: Format and fix source code"
