@@ -8,12 +8,13 @@ BUILD_PATH := bin
 all: clean install build
 
 install:
-	go mod tidy
+	go mod download
 
 check:
 	go vet ./...
 
 fix:
+	go mod tidy
 	go fmt ./...
 
 clean:
