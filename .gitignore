@@ -1,4 +1,4 @@
-# PyCharm
+# JetBrain IDEs
 .idea/
 .run/
 
@@ -14,6 +14,9 @@
 # Environment variables files
 .env
 .env*
+
+# Log files
+*.log
 
 # Moonrepo
 .moon/cache
