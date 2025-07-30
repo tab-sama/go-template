@@ -10,8 +10,8 @@ project:
 tasks:
   clean:
     script: 'rm -rf bin'
-  install:
-    script: 'go mod download'
+  setup:
+    script: 'go mod tidy'
   format:
     script: 'gofumpt -l -w .; golangci-lint run --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
   lint:
@@ -28,3 +28,5 @@ tasks:
       - 'cmd/main.go'
     outputs:
       - 'bin/app'
+  run:
+    script: 'go run ./cmd'
