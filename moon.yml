@@ -1,4 +1,4 @@
-$schema: 'https://moonrepo.dev/schemas/tasks.json'
+$schema: 'https://moonrepo.dev/schemas/project.json'
 
 type: 'application'
 language: 'go'
@@ -6,6 +6,10 @@ language: 'go'
 project:
   name: 'temp'
   description: 'A very basic template for a Golang project'
+
+fileGroups:
+  sources:
+    - 'cmd/main.go'
 
 tasks:
   clean:
@@ -18,8 +22,12 @@ tasks:
       - 'go.mod'
   format:
     script: 'gofumpt -l -w .; golangci-lint run --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
+    inputs:
+      - '@group(sources)'
   lint:
     script: 'golangci-lint run --allow-parallel-runners; go vet ./...'
+    inputs:
+      - '@group(sources)'
   test:
     command: 'go test ./...'
   build:
@@ -29,7 +37,7 @@ tasks:
       GOARCH: 'amd64'
     command: 'go build -ldflags="-s" -ldflags="-w" -gcflags="-N" -gcflags="-l" -o bin/app cmd/main.go'
     inputs:
-      - 'cmd/main.go'
+      - '@group(sources)'
     outputs:
       - 'bin/app'
   run:
