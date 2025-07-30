@@ -15,6 +15,10 @@
 .env
 .env*
 
+# Moonrepo
+.moon/cache
+.moon/docker
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
