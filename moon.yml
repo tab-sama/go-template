@@ -10,8 +10,12 @@ project:
 tasks:
   clean:
     script: 'rm -rf bin'
+    options:
+      cache: false
   setup:
     script: 'go mod tidy'
+    inputs:
+      - 'go.mod'
   format:
     script: 'gofumpt -l -w .; golangci-lint run --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
   lint:
