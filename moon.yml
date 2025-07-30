@@ -12,6 +12,10 @@ tasks:
     script: 'rm -rf bin'
   install:
     script: 'go mod download'
+  format:
+    script: 'gofumpt -l -w .; golangci-lint run --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
+  lint:
+    script: 'golangci-lint run --allow-parallel-runners; go vet ./...'
   test:
     command: 'go test ./...'
   build:

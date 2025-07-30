@@ -1,0 +1,25 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "gofumpt"
+type = "cli"
+
+[resolve]
+git-url = "https://github.com/mvdan/gofumpt"
+
+[platform.linux]
+download-file = "gofumpt_v{version}_linux_{arch}"
+
+[platform.macos]
+download-file = "gofumpt_v{version}_darwin_{arch}"
+
+[platform.windows]
+download-file = "gofumpt_v{version}_windows_{arch}.exe"
+
+[install]
+download-url = "https://github.com/mvdan/gofumpt/releases/download/v{version}/{download_file}"
+
+[install.arch]
+x86 = "386"
+x86_64 = "amd64"
+aarch64 = "arm64"
