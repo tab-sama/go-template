@@ -1,38 +1,39 @@
-# Variables
-BINARY_NAME := hello
-PACKAGE_PATH := cmd/main.go
-BUILD_PATH := bin
-
-.PHONY: all install check fix clean build run
+.PHONY: all install clean format lint test build run
 
 all: clean build
 
 install:
-	go mod download
-
-check:
-	go vet ./...
-
-fix:
-	go mod tidy
-	go fmt ./...
+	# Installing Moonrepo proto https://moonrepo.dev/proto
+	@if [ "$$(uname)" = "Linux" ] || [ "$$(uname)" = "Darwin" ]; then \
+		bash -c "$$(curl -fsSL https://moonrepo.dev/install/proto.sh)"; \
+	elif [ "$$(uname -r | grep -i microsoft)" != "" ]; then \
+		bash -c "$$(curl -fsSL https://moonrepo.dev/install/proto.sh)"; \
+	elif [ "$$(uname -s | grep -i mingw)" != "" ] || [ "$$(uname -s | grep -i cygwin)" != "" ] || [ "$$(uname -s | grep -i windows)" != "" ]; then \
+		powershell -Command "irm https://moonrepo.dev/install/proto.ps1 | iex"; \
+		powershell -Command "Set-ExecutionPolicy -Scope CurrentUser RemoteSigned"; \
+	else \
+		echo "Unsupported operating system. Please install manually:"; \
+		exit 1; \
+	fi;
+	# Installing all the other tools with the proto
+	proto use
+	# Running the Moon setup task at the end
+	moon :setup
 
 clean:
-	rm -rf $(BUILD_PATH)
+	moon :clean
+
+format:
+	moon :format
+
+lint:
+	moon :lint
+
+test:
+	moon :test
 
 build:
-	go build -o $(BUILD_PATH)/$(BINARY_NAME) $(PACKAGE_PATH)
+	moon :build
 
-run: build
-	./$(BUILD_PATH)/$(BINARY_NAME)
-
-help:
-	@echo "Available targets:"
-	@echo "  all: Clean and builds the program"
-	@echo "  install: install packages"
-	@echo "  check: Report issues in the code"
-	@echo "  fix: Format and fix source code"
-	@echo "  clean: Cleans up build artifacts"
-	@echo "  build: Builds the program"
-	@echo "  run: Run the final program"
-	@echo "  help: Displays this help message"
+run:
+	moon :run
