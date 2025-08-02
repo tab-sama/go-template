@@ -1,4 +1,4 @@
-# JetBrain IDEs
+# JetBrain
 .idea/
 .run/
 
@@ -6,41 +6,12 @@
 .vscode/
 .history
 
-# Vim files:
+# Vim
 *~
 *.swp
 *.swo
 
-# Environment variables files
+# Environment variable files
 .env
 .env*
-
-# Log files
-*.log
-
-# Moonrepo
-.moon/cache
-.moon/docker
-
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Dependency directories
-vendor/
-
-# Go workspace file
-go.work
-go.work.sum
-
-# Binary files
-bin/
+!.env.example
