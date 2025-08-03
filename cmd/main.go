@@ -1,9 +1,15 @@
-// TODO: This is a placeholder main.go file. Replace with your own application code.
 package main
 
-import "fmt"
+import (
+	"github.com/xurvan/go-template/config"
+	"github.com/xurvan/go-template/internal/foo"
+)
 
 func main() {
-	// Replace this with your application's entry point code
-	fmt.Println("Hello, World!!")
+	// Initialize configuration
+	cfg := config.New()
+
+	// Create and use the foo module
+	fooModule := foo.New(cfg)
+	fooModule.DoSomething()
 }
