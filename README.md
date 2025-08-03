@@ -1,8 +1,11 @@
-# Go Project Template
+# 🚀 Go Project Template
+
+[![Go Version](https://img.shields.io/badge/Go-1.24.5-blue.svg)](https://golang.org/doc/devel/release.html)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 > **Note**: This is a GitHub template repository. Use this template to create a new Go project with a standardized structure and tooling.
 
-## How to Use This Template
+## 📋 How to Use This Template
 
 1. Click the "Use this template" button at the top of this repository page
 2. Name your project and provide a description
@@ -12,7 +15,7 @@
    - Modifying the code in `cmd/main.go` to implement your application
    - Updating the `go.mod` file with your module path
 
-## About This Template
+## 📚 About This Template
 
 - This template adopts the [Standard Go Project Layout](https://github.com/golang-standards/project-layout) for a clean
   and organized codebase.
@@ -26,7 +29,7 @@
 - This template uses [Moonrepo](https://moonrepo.dev/) as its primary build system. Moonrepo provides consistent tooling,
   task running, and dependency management across the project.
 
-## Setup
+## 🔧 Setup
 
 ### Using Moonrepo (Recommended)
 
@@ -72,7 +75,7 @@ make run
 go run ./cmd
 ```
 
-## Build
+## 🔨 Build
 
 ### Using Moonrepo (Recommended)
 
@@ -94,7 +97,7 @@ make
 make build
 ```
 
-## Available Commands
+## 🛠️ Available Commands
 
 ### Moonrepo Commands
 
