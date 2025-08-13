@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/xurvan/go-template/config"
+	"github.com/xurvan/go-template/internal/config"
 )
 
 type Foo struct {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/xurvan/go-template/config"
+	"github.com/xurvan/go-template/internal/config"
 	"github.com/xurvan/go-template/internal/foo"
 )
 
