@@ -9,7 +9,8 @@ project:
 
 fileGroups:
   sources:
-    - 'cmd/app/main.go'
+    - 'cmd'
+    - 'internal'
 
 tasks:
   clean:
@@ -29,7 +30,9 @@ tasks:
     inputs:
       - '@group(sources)'
   test:
-    command: 'go test ./...'
+    script: 'go test ./...'
+    inputs:
+      - '@group(sources)'
   build:
     env:
       CGO_ENABLED: '0'
@@ -42,3 +45,5 @@ tasks:
       - 'bin/app'
   run:
     script: 'go run ./cmd/app'
+    options:
+      envFile: true
