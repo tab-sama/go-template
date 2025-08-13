@@ -9,7 +9,7 @@ project:
 
 fileGroups:
   sources:
-    - 'cmd/main.go'
+    - 'cmd/app/main.go'
 
 tasks:
   clean:
@@ -35,10 +35,10 @@ tasks:
       CGO_ENABLED: '0'
       GOOS: 'linux'
       GOARCH: 'amd64'
-    command: 'go build -ldflags="-s" -ldflags="-w" -gcflags="-N" -gcflags="-l" -o bin/app cmd/main.go'
+    command: 'go build -ldflags="-s" -ldflags="-w" -gcflags="-N" -gcflags="-l" -o bin/app cmd/app/main.go'
     inputs:
       - '@group(sources)'
     outputs:
       - 'bin/app'
   run:
-    script: 'go run ./cmd'
+    script: 'go run ./cmd/app'
