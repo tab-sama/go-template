@@ -22,13 +22,15 @@ tasks:
     inputs:
       - 'go.mod'
   format:
-    script: 'gofumpt -l -w .; golangci-lint run --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
+    script: 'golangci-lint run -c configs/golangci.yml --fix --allow-parallel-runners --issues-exit-code 0 > /dev/null'
     inputs:
       - '@group(sources)'
+      - 'configs/golangci.yml'
   lint:
-    script: 'golangci-lint run --allow-parallel-runners; go vet ./...'
+    script: 'golangci-lint run -c configs/golangci.yml --allow-parallel-runners'
     inputs:
       - '@group(sources)'
+      - 'configs/golangci.yml'
   test:
     script: 'go test ./...'
     inputs:
