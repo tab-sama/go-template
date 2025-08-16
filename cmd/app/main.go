@@ -6,10 +6,8 @@ import (
 )
 
 func main() {
-	// Initialize configuration
 	cfg := config.New()
 
-	// Create and use the foo module
-	fooModule := foo.New(cfg)
-	fooModule.DoSomething()
+	f := foo.New(cfg)
+	f.DoSomething()
 }
