@@ -1,5 +1,4 @@
-// Package config provides configuration management for the Go project template.
-// It handles application configuration including log levels with environment variable support.
+// Package config manages application configuration with environment variable support.
 package config
 
 import (
@@ -8,15 +7,12 @@ import (
 	"strings"
 )
 
-// Config holds the application configuration settings.
-// It contains settings for logging and other configurable aspects of the application.
+// Config holds application configuration settings including logging.
 type Config struct {
 	LogLevel slog.Level
 }
 
-// New creates and returns a new Config instance with default settings.
-// It sets the default log level to INFO and checks for the LOG_LEVEL environment variable
-// to override the default. Supported values are DEBUG, INFO, WARN, and ERROR (case-insensitive).
+// New creates a Config with default settings and optional LOG_LEVEL env override (DEBUG/INFO/WARN/ERROR).
 func New() *Config {
 	cfg := &Config{
 		LogLevel: slog.LevelInfo, // Default log level

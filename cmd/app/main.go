@@ -1,5 +1,4 @@
-// Package main is the entry point for the Go project template application.
-// It demonstrates how to initialize configuration, create components, and run example operations.
+// Package main is the entry point for the application.
 package main
 
 import (

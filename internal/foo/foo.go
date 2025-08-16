@@ -1,5 +1,4 @@
-// Package foo provides example functionality for the Go project template.
-// It demonstrates structured logging using slog with configurable log levels.
+// Package foo provides example functionality with structured logging.
 package foo
 
 import (
@@ -10,15 +9,12 @@ import (
 	"github.com/xurvan/go-template/internal/config"
 )
 
-// Foo represents a component that performs example operations with structured logging.
-// It encapsulates a logger instance configured according to the provided configuration.
+// Foo performs example operations with structured logging.
 type Foo struct {
 	logger *slog.Logger
 }
 
-// New creates and returns a new Foo instance with a configured logger.
-// The logger is set up with a text handler that writes to stdout,
-// using the log level specified in the provided configuration.
+// New creates a new Foo instance with a configured stdout logger.
 func New(cfg *config.Config) *Foo {
 	logHandler := slog.NewTextHandler(
 		os.Stdout,
@@ -36,9 +32,7 @@ func New(cfg *config.Config) *Foo {
 	}
 }
 
-// DoSomething demonstrates logging at different levels (Debug, Info, Warn, Error).
-// It takes a context and logs example messages at each log level to showcase
-// the structured logging capabilities of the component.
+// DoSomething demonstrates logging at different levels.
 func (f *Foo) DoSomething(ctx context.Context) {
 	f.logger.DebugContext(ctx, "Debug message from foo")
 	f.logger.InfoContext(ctx, "Info message from foo")
