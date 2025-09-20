@@ -6,7 +6,6 @@
 [![moonrepo](https://img.shields.io/badge/moonrepo-managed-blue.svg)](https://moonrepo.dev)
 [![lefthook](https://img.shields.io/badge/lefthook-enabled-green.svg)](https://github.com/evilmartians/lefthook)
 [![golangci-lint](https://img.shields.io/badge/golangci--lint-enabled-brightgreen.svg)](https://golangci-lint.run/)
-[![GitHub Stars](https://img.shields.io/github/stars/tab-sama/go-template?style=social)](https://github.com/tab-sama/go-template/stargazers)
 
 This is a modern GitHub template repository for Go projects. Use this template to create a new Go application with a standardized structure, automated tooling, and best practices built-in.
 
