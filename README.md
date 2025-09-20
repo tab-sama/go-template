@@ -210,6 +210,40 @@ go-template/
 
 ## 🔧 Configuration
 
+This template includes several configuration files for different tools and build processes:
+
+### 🌙 Moonrepo Configuration (`moon.yml`)
+
+Configures the Moonrepo build system with project metadata, file groups, and task definitions. Defines tasks for cleaning, setup, formatting, linting, testing, building, and running the application. Uses input/output tracking for efficient caching and includes environment variables for optimized builds.
+
+### 🪝 Lefthook Configuration (`.lefthook.yml`)
+
+Configures Git hooks for automated quality checks. Currently sets up pre-commit hooks that run linting automatically before each commit to maintain code quality and prevent issues from being committed.
+
+### 🔧 Proto Tools Configuration (`.prototools`)
+
+Manages tool versions using the proto version manager. Specifies exact versions for moon, Go, golangci-lint, and lefthook to ensure consistent tool versions across different environments and team members. Includes plugin configurations for enhanced tool management.
+
+### 📋 golangci-lint Configuration (`configs/golangci.yml`)
+
+Provides comprehensive linting configuration with over 40 enabled linters. Configures code formatters (goimports, golines, gci, gofmt, gofumpt), sets line length limits, and enables strict error checking. Includes specialized settings for various linters like govet, staticcheck, and custom rules for code quality.
+
+### 🔧 Go Module Configuration (`go.mod`)
+
+Standard Go module definition file that specifies the module path and Go version requirement. Contains a TODO comment reminding users to replace the template module path with their own project's module path.
+
+### 🛠️ Makefile Configuration
+
+Provides convenient command shortcuts that wrap Moonrepo tasks. Includes targets for install, clean, format, lint, test, build, and run operations. All targets delegate to corresponding moon commands, providing a familiar interface for developers who prefer make commands.
+
+### 🌙 Moon Workspace Configuration (`.moon/workspace.yml`)
+
+Contains workspace-level configuration for Moonrepo, managing global settings that apply across the entire project workspace.
+
+### 🔌 Moon Plugin Configuration (`.moon/plugins/golangci-lint.yml`)
+
+Defines the golangci-lint plugin configuration for Moonrepo, enabling tight integration between the linter and the build system for consistent execution and caching.
+
 ## 🤝 Contributing
 
 1. Fork the repository
