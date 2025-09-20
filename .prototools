@@ -2,6 +2,8 @@ proto = "0.50.3"
 moon = "1.38.4"
 go = "1.24.5"
 golangci-lint = "2.3.0"
+lefthook = "1.13.0"
 
 [plugins]
 golangci-lint = "file://.moon/plugins/golangci-lint.yml"
+lefthook = "https://raw.githubusercontent.com/ageha734/proto-plugins/refs/heads/master/toml/lefthook.toml"
