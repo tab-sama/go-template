@@ -3,7 +3,6 @@
 [![Go Version](https://img.shields.io/badge/Go-1.24.5-blue.svg)](https://golang.org/doc/devel/release.html)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Go Report Card](https://goreportcard.com/badge/github.com/tab-sama/go-template)](https://goreportcard.com/report/github.com/tab-sama/go-template)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/tab-sama/go-template/graphs/commit-activity)
 [![moonrepo](https://img.shields.io/badge/moonrepo-managed-blue.svg)](https://moonrepo.dev)
 [![lefthook](https://img.shields.io/badge/lefthook-enabled-green.svg)](https://github.com/evilmartians/lefthook)
 [![golangci-lint](https://img.shields.io/badge/golangci--lint-enabled-brightgreen.svg)](https://golangci-lint.run/)
