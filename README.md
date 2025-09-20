@@ -7,16 +7,18 @@
 [![lefthook](https://img.shields.io/badge/lefthook-enabled-green.svg)](https://github.com/evilmartians/lefthook)
 [![golangci-lint](https://img.shields.io/badge/golangci--lint-enabled-brightgreen.svg)](https://golangci-lint.run/)
 
-This is a modern GitHub template repository for Go projects. Use this template to create a new Go application with a standardized structure, automated tooling, and best practices built-in.
+This is a modern GitHub template repository for Go projects. Use this template to create a new Go application with a
+standardized structure, automated tooling, and best practices built-in.
 
 ## 🎯 Why This Template?
 
-- **📁 Standard Layout**: Adopts the [Standard Go Project Layout](https://github.com/golang-standards/project-layout) for a clean and organized codebase
+- **📁 Standard Layout**: Adopts the [Standard Go Project Layout](https://github.com/golang-standards/project-layout) for
+  a clean and organized codebase
 - **🔧 Modern Tooling**: Pre-configured with golangci-lint, lefthook, and moonrepo for seamless development
-- **📋 Best Practices**: Follows [Effective Go](https://go.dev/doc/effective_go) guidelines with automated formatting and linting
+- **📋 Best Practices**: Follows [Effective Go](https://go.dev/doc/effective_go) guidelines with automated formatting and
+  linting
 - **🚀 Ready to Deploy**: Optimized build configuration with cross-compilation support
 - **⚡ Fast Development**: Moonrepo provides consistent task running and dependency management across the project
-
 
 ## ✨ Features
 
@@ -73,6 +75,7 @@ moon :build
 ```
 
 ## 🛠️ Development
+
 ### 🛠️ Available Commands
 
 #### Moonrepo Commands
@@ -149,6 +152,7 @@ git commit -m "feat!: breaking change" # Use BREAKING CHANGE footer instead
 ```
 
 **Available commit types:**
+
 - `feat` - New features
 - `fix` - Bug fixes
 - `docs` - Documentation changes
@@ -210,39 +214,16 @@ go-template/
 
 ## 🔧 Configuration
 
-This template includes several configuration files for different tools and build processes:
-
-### 🌙 Moonrepo Configuration (`moon.yml`)
-
-Configures the Moonrepo build system with project metadata, file groups, and task definitions. Defines tasks for cleaning, setup, formatting, linting, testing, building, and running the application. Uses input/output tracking for efficient caching and includes environment variables for optimized builds.
-
-### 🪝 Lefthook Configuration (`.lefthook.yml`)
-
-Configures Git hooks for automated quality checks. Currently sets up pre-commit hooks that run linting automatically before each commit to maintain code quality and prevent issues from being committed.
-
-### 🔧 Proto Tools Configuration (`.prototools`)
-
-Manages tool versions using the proto version manager. Specifies exact versions for moon, Go, golangci-lint, and lefthook to ensure consistent tool versions across different environments and team members. Includes plugin configurations for enhanced tool management.
-
-### 📋 golangci-lint Configuration (`configs/golangci.yml`)
-
-Provides comprehensive linting configuration with over 40 enabled linters. Configures code formatters (goimports, golines, gci, gofmt, gofumpt), sets line length limits, and enables strict error checking. Includes specialized settings for various linters like govet, staticcheck, and custom rules for code quality.
-
-### 🔧 Go Module Configuration (`go.mod`)
-
-Standard Go module definition file that specifies the module path and Go version requirement. Contains a TODO comment reminding users to replace the template module path with their own project's module path.
-
-### 🛠️ Makefile Configuration
-
-Provides convenient command shortcuts that wrap Moonrepo tasks. Includes targets for install, clean, format, lint, test, build, and run operations. All targets delegate to corresponding moon commands, providing a familiar interface for developers who prefer make commands.
-
-### 🌙 Moon Workspace Configuration (`.moon/workspace.yml`)
-
-Contains workspace-level configuration for Moonrepo, managing global settings that apply across the entire project workspace.
-
-### 🔌 Moon Plugin Configuration (`.moon/plugins/golangci-lint.yml`)
-
-Defines the golangci-lint plugin configuration for Moonrepo, enabling tight integration between the linter and the build system for consistent execution and caching.
+| File                                | Purpose               | Key Features                                  |
+|-------------------------------------|-----------------------|-----------------------------------------------|
+| **moon.yml**                        | Moonrepo build system | Task definitions, caching, optimized builds   |
+| **.lefthook.yml**                   | Git hooks             | Pre-commit linting, automated quality checks  |
+| **.prototools**                     | Tool version manager  | Consistent versions across environments       |
+| **configs/golangci.yml**            | Linting configuration | 40+ linters, formatting rules, quality checks |
+| **go.mod**                          | Go module definition  | Module path, Go version requirements          |
+| **Makefile**                        | Command shortcuts     | Convenient wrappers for moon tasks            |
+| **.moon/workspace.yml**             | Moonrepo workspace    | Global project settings                       |
+| **.moon/plugins/golangci-lint.yml** | Moon plugin config    | Linter integration with build system          |
 
 ## 🤝 Contributing
 
